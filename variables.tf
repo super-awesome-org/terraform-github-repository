@@ -109,7 +109,7 @@ variable "archive_on_destroy" {
   default     = false
 }
 
-variable "pages" {
+variable "template" {
   type        = map(any)
   description = "Configuration block for GitHub Pages"
   default     = {}
