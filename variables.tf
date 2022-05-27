@@ -138,10 +138,6 @@ variable "branch_protections" {
     branch                 = string,
     enforce_admins         = bool,
     require_signed_commits = bool,
-    required_status_checks = object({
-      strict   = bool
-      contexts = list(string)
-    })
 
     required_pull_request_reviews = object({
       dismiss_stale_reviews           = bool,
