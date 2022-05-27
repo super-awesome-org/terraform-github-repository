@@ -62,10 +62,6 @@ resource "github_branch_protection_v3" "this" {
   enforce_admins         = var.branch_protections[count.index].enforce_admins
   require_signed_commits = var.branch_protections[count.index].require_signed_commits
 
-  required_status_checks {
-    strict   = lookup(lookup(var.branch_protections[count.index], "required_status_checks", null), "strict", null)
-    contexts = lookup(lookup(var.branch_protections[count.index], "required_status_checks", null), "contexts", null)
-  }
 
   required_pull_request_reviews {
     dismiss_stale_reviews           = lookup(lookup(var.branch_protections[count.index], "required_pull_request_reviews", null), "dismiss_stale_reviews", null)
